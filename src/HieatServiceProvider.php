@@ -18,7 +18,7 @@ class HieatServiceProvider extends PluginServiceProvider
     public function packageConfigured(Package $package): void
     {
         $package->name("hieat")
-            ->hasConfigFile("hieat");
+            ->hasConfigFile(["hieat"]);
     }
 
 }
