@@ -12,7 +12,7 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Spatie\Permission\Models\Permission;
-use function Sorethea\Hieat\Filament\Resources\Settings\trans;
+
 
 class PermissionResource extends Resource
 {
@@ -22,7 +22,7 @@ class PermissionResource extends Resource
 
     protected static function getNavigationGroup(): ?string
     {
-        return trans("lang.setting");
+        return \trans("lang.setting");
     }
 
     public static function form(Form $form): Form

@@ -13,7 +13,7 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Spatie\Activitylog\Models\Activity;
-use function Sorethea\Hieat\Filament\Resources\Settings\trans;
+
 
 class ActivityResource extends Resource
 {
@@ -23,7 +23,7 @@ class ActivityResource extends Resource
 
     protected static function getNavigationGroup(): ?string
     {
-        return trans("lang.setting");
+        return \trans("lang.setting");
     }
 
     public static function form(Form $form): Form
@@ -50,7 +50,7 @@ class ActivityResource extends Resource
                 Tables\Columns\TextColumn::make("subject_type")->searchable(),
                 Tables\Columns\TextColumn::make("subject_id")->searchable(),
                 Tables\Columns\TextColumn::make("causer.phone")->searchable(),
-                ActivityLog::make("properties")->label(trans("lang.modified")),
+                ActivityLog::make("properties")->label(\trans("lang.modified")),
                 Tables\Columns\TextColumn::make("created_at")->dateTime('M d, Y H:i:s'),
             ])
             ->filters([

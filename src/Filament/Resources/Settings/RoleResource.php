@@ -14,7 +14,7 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Spatie\Permission\Models\Role;
-use function Sorethea\Hieat\Filament\Resources\Settings\trans;
+
 
 class RoleResource extends Resource
 {
@@ -44,7 +44,7 @@ class RoleResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make("name")->searchable(),
                 Tables\Columns\TextColumn::make('permissions_count')
-                    ->label(trans('lang.permission_plural'))
+                    ->label(\trans('lang.permission_plural'))
                     ->counts('permissions'),
                 Tables\Columns\TextColumn::make("created_at")
                     ->dateTime("M d, Y H:i:s")
