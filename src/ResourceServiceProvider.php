@@ -7,8 +7,12 @@ use Spatie\LaravelPackageTools\Package;
 
 class ResourceServiceProvider extends PluginServiceProvider
 {
+
     public function packageConfigured(Package $package): void
     {
-        $package->name("hieat");
+        if(!empty($package->name)){
+            $package->name("hieat");
+        }
+
     }
 }
