@@ -10,14 +10,14 @@ use Spatie\LaravelPackageTools\Package;
 
 class HieatServiceProvider extends PluginServiceProvider
 {
-    protected array $resources = [
-        UserResource::class,
-        PermissionResource::class,
-        RoleResource::class,
-    ];
-    public function packageConfigured(?Package $package): void
-    {
-        $package->name("hieat");
-    }
+//    protected array $resources = [
+//        UserResource::class,
+//        PermissionResource::class,
+//        RoleResource::class,
+//    ];
+//    public function packageConfigured(?Package $package): void
+//    {
+//        $package->name("hieat");
+//    }
 
 }
