@@ -17,7 +17,7 @@ class HieatServiceProvider extends PluginServiceProvider
 //    ];
     public function packageConfigured(?Package $package): void
     {
-        $package->name("hieat");
+        $package->name("sorethea/hieat");
     }
 
 }
