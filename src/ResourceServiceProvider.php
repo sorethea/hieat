@@ -3,16 +3,21 @@
 namespace Sorethea\Hieat;
 
 use Filament\PluginServiceProvider;
+use Sorethea\Hieat\Filament\Resources\Settings\PermissionResource;
+use Sorethea\Hieat\Filament\Resources\Settings\RoleResource;
+use Sorethea\Hieat\Filament\Resources\Settings\UserResource;
 use Spatie\LaravelPackageTools\Package;
 
 class ResourceServiceProvider extends PluginServiceProvider
 {
+    protected array $resources = [
+        UserResource::class,
+        RoleResource::class,
+        PermissionResource::class,
+    ];
 
     public function configurePackage(Package $package): void
     {
-        if(!empty($package->name)){
-            $package->name("hieat");
-        }
-
+        $package->name("hieat");
     }
 }
