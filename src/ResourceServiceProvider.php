@@ -3,6 +3,10 @@
 namespace Sorethea\Hieat;
 
 use Filament\PluginServiceProvider;
+use Sorethea\Hieat\Filament\Resources\Operation\CuisineResource;
+use Sorethea\Hieat\Filament\Resources\Operation\FoodResource;
+use Sorethea\Hieat\Filament\Resources\Operation\OrderResource;
+use Sorethea\Hieat\Filament\Resources\Operation\RestaurantResource;
 use Sorethea\Hieat\Filament\Resources\Settings\ActivityResource;
 use Sorethea\Hieat\Filament\Resources\Settings\PermissionResource;
 use Sorethea\Hieat\Filament\Resources\Settings\RoleResource;
@@ -16,6 +20,10 @@ class ResourceServiceProvider extends PluginServiceProvider
         UserResource::class,
         RoleResource::class,
         PermissionResource::class,
+        OrderResource::class,
+        RestaurantResource::class,
+        FoodResource::class,
+        CuisineResource::class,
     ];
 
     public function configurePackage(Package $package): void
