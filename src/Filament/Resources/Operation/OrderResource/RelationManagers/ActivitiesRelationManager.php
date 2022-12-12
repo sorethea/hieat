@@ -8,7 +8,6 @@ use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
-use function App\Filament\Resources\Operation\OrderResource\RelationManagers\\trans;
 
 class ActivitiesRelationManager extends RelationManager
 {

@@ -9,7 +9,6 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use function App\Filament\Resources\Operation\OrderResource\RelationManagers\\trans;
 
 class FoodOrdersRelationManager extends RelationManager
 {
