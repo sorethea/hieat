@@ -2,8 +2,8 @@
 
 namespace Sorethea\Hieat\Filament\Resources\Settings;
 
-use App\Filament\Resources\Settings\PermissionResource\Pages;
-use App\Filament\Resources\Settings\PermissionResource\RelationManagers;
+use Sorethea\Hieat\Filament\Resources\Settings\PermissionResource\Pages;
+use Sorethea\Hieat\Filament\Resources\Settings\PermissionResource\RelationManagers;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -12,7 +12,7 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Spatie\Permission\Models\Permission;
-use function App\Filament\Resources\Settings\trans;
+use function Sorethea\Hieat\Filament\Resources\Settings\trans;
 
 class PermissionResource extends Resource
 {

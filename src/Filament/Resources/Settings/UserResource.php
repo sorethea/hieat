@@ -2,8 +2,8 @@
 
 namespace Sorethea\Hieat\Filament\Resources\Settings;
 
-use App\Filament\Resources\Settings\UserResource\Pages;
-use App\Filament\Resources\Settings\UserResource\RelationManagers;
+use Sorethea\Hieat\Filament\Resources\Settings\UserResource\Pages;
+use Sorethea\Hieat\Filament\Resources\Settings\UserResource\RelationManagers;
 use App\Models\User;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -12,7 +12,7 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use function App\Filament\Resources\Settings\trans;
+use function Sorethea\Hieat\Filament\Resources\Settings\trans;
 
 class UserResource extends Resource
 {

@@ -3,8 +3,8 @@
 namespace Sorethea\Hieat\Filament\Resources\Settings;
 
 use Sorethea\Hieat\Filament\Resources\RoleResource\RelationManagers\PermissionsRelationManager;
-use App\Filament\Resources\Settings\RoleResource\Pages;
-use App\Filament\Resources\Settings\RoleResource\RelationManagers;
+use Sorethea\Hieat\Filament\Resources\Settings\RoleResource\Pages;
+use Sorethea\Hieat\Filament\Resources\Settings\RoleResource\RelationManagers;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\HasManyThroughRelationManager;
@@ -14,7 +14,7 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Spatie\Permission\Models\Role;
-use function App\Filament\Resources\Settings\trans;
+use function Sorethea\Hieat\Filament\Resources\Settings\trans;
 
 class RoleResource extends Resource
 {

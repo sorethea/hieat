@@ -2,8 +2,8 @@
 
 namespace Sorethea\Hieat\Filament\Resources\Settings;
 
-use App\Filament\Resources\Settings\ActivityResource\Pages;
-use App\Filament\Resources\Settings\ActivityResource\RelationManagers;
+use Sorethea\Hieat\Filament\Resources\Settings\ActivityResource\Pages;
+use Sorethea\Hieat\Filament\Resources\Settings\ActivityResource\RelationManagers;
 use App\Tables\Columns\ActivityLog;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -13,7 +13,7 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Spatie\Activitylog\Models\Activity;
-use function App\Filament\Resources\Settings\trans;
+use function Sorethea\Hieat\Filament\Resources\Settings\trans;
 
 class ActivityResource extends Resource
 {
