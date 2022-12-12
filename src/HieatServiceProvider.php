@@ -15,9 +15,9 @@ class HieatServiceProvider extends PluginServiceProvider
 //        PermissionResource::class,
 //        RoleResource::class,
 //    ];
-//    public function packageConfigured(?Package $package): void
-//    {
-//        $package->name("hieat");
-//    }
+    public function packageConfigured(?Package $package): void
+    {
+        $package->name("hieat");
+    }
 
 }
