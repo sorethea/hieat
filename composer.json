@@ -16,6 +16,10 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "spatie/laravel-package-tools": "1.13.7"
+        "php": "^8.0.2",
+        "filament/filament": "2.*",
+        "illuminate/config": "^8.0 || ^9.0",
+        "illuminate/database": "^8.53 || ^9.0",
+        "illuminate/support": "^8.0 || ^9.0"
     }
 }
