@@ -15,7 +15,7 @@ use Filament\Tables;
 use FontLib\Table\Type\name;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use function App\Filament\Resources\Operation\trans;
+
 
 class FoodResource extends Resource
 {
@@ -25,7 +25,7 @@ class FoodResource extends Resource
 
     protected static function getNavigationGroup(): ?string
     {
-        return trans("lang.operation");
+        return \trans("lang.operation");
     }
 
     public static function form(Form $form): Form

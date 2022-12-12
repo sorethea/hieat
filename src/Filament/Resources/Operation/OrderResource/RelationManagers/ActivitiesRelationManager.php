@@ -8,7 +8,7 @@ use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
-use function App\Filament\Resources\Operation\OrderResource\RelationManagers\trans;
+use function App\Filament\Resources\Operation\OrderResource\RelationManagers\\trans;
 
 class ActivitiesRelationManager extends RelationManager
 {
@@ -32,8 +32,8 @@ class ActivitiesRelationManager extends RelationManager
                 Tables\Columns\TextColumn::make('description'),
                 Tables\Columns\TextColumn::make('causer.phone'),
                 Tables\Columns\TagsColumn::make('causer.roles.name')
-                    ->label(trans("lang.role")),
-                ActivityLog::make("properties")->label(trans("lang.modified")),
+                    ->label(\trans("lang.role")),
+                ActivityLog::make("properties")->label(\trans("lang.modified")),
                 Tables\Columns\TextColumn::make('updated_at')->date("d M, Y H:i:s"),
             ])
             ->filters([

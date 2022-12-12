@@ -12,7 +12,7 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use function App\Filament\Resources\Operation\trans;
+
 
 class CuisineResource extends Resource
 {
@@ -22,7 +22,7 @@ class CuisineResource extends Resource
 
     protected static function getNavigationGroup(): ?string
     {
-        return trans("lang.operation");
+        return \trans("lang.operation");
     }
 
     public static function form(Form $form): Form
@@ -42,7 +42,7 @@ class CuisineResource extends Resource
             ->columns([
                 Tables\Columns\SpatieMediaLibraryImageColumn::make("image")->collection("image")->rounded(),
                 Tables\Columns\TextColumn::make("name")->searchable(),
-                Tables\Columns\TextColumn::make("restaurants_count")->label(trans("lang.restaurant_plural"))->counts("restaurants"),
+                Tables\Columns\TextColumn::make("restaurants_count")->label(\trans("lang.restaurant_plural"))->counts("restaurants"),
                 Tables\Columns\BooleanColumn::make("active"),
             ])
             ->filters([

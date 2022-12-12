@@ -10,7 +10,7 @@ use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
-use function App\Filament\Resources\Operation\trans;
+
 
 class OrderResource extends Resource
 {
@@ -20,7 +20,7 @@ class OrderResource extends Resource
 
     protected static function getNavigationGroup(): ?string
     {
-        return trans("lang.operation");
+        return \trans("lang.operation");
     }
 
     public static function form(Form $form): Form
@@ -29,7 +29,7 @@ class OrderResource extends Resource
             ->schema([
                 Forms\Components\Card::make()->schema([
                     Forms\Components\Group::make([
-                        Forms\Components\TextInput::make("id")->label(trans("lang.order_id"))->disabled(true),
+                        Forms\Components\TextInput::make("id")->label(\trans("lang.order_id"))->disabled(true),
                         Forms\Components\BelongsToSelect::make("orderStatus")->relationship("orderStatus","status"),
                         ])->columns(2),
                     Forms\Components\BelongsToSelect::make("delivery_address")->relationship("deliveryAddress","formatted_address"),
@@ -56,7 +56,7 @@ class OrderResource extends Resource
                 ])->columnSpan(2),
                 Forms\Components\Group::make()->schema([
                     Forms\Components\Card::make([
-                        Forms\Components\TextInput::make("total")->prefix("$")->label(trans('lang.order_total')),
+                        Forms\Components\TextInput::make("total")->prefix("$")->label(\trans('lang.order_total')),
                         Forms\Components\TextInput::make("delivery_fee")->prefix("$"),
                         Forms\Components\Toggle::make("active"),
                         Forms\Components\DateTimePicker::make("created_at"),
@@ -72,7 +72,7 @@ class OrderResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make("id")->label(trans("lang.order_id"))->prefix("#")->searchable(),
+                Tables\Columns\TextColumn::make("id")->label(\trans("lang.order_id"))->prefix("#")->searchable(),
                 Tables\Columns\BadgeColumn::make("orderStatus.status")->colors([
                     "danger"=>"Order Placed",
                     "warning"=>"Accepted",
@@ -80,9 +80,9 @@ class OrderResource extends Resource
                     "secondary"=>"On the way",
                     "success"=>"Delivered",
                 ])->searchable(),
-                Tables\Columns\TextColumn::make("user.phone")->label(trans('lang.order_client_phone'))->searchable(),
-                Tables\Columns\TextColumn::make("driver.phone")->label(trans('lang.order_driver_phone'))->searchable(),
-                Tables\Columns\TextColumn::make("properties.contact_number")->label(trans('lang.order_contact_number')),
+                Tables\Columns\TextColumn::make("user.phone")->label(\trans('lang.order_client_phone'))->searchable(),
+                Tables\Columns\TextColumn::make("driver.phone")->label(\trans('lang.order_driver_phone'))->searchable(),
+                Tables\Columns\TextColumn::make("properties.contact_number")->label(\trans('lang.order_contact_number')),
                 Tables\Columns\TextColumn::make("restaurant.name")->searchable(),
                 Tables\Columns\TextColumn::make("total")->money("usd",true)->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make("delivery_fee")->money("usd",true)->toggleable(isToggledHiddenByDefault: true),

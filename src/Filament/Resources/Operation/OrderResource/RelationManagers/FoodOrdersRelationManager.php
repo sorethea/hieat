@@ -9,7 +9,7 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use function App\Filament\Resources\Operation\OrderResource\RelationManagers\trans;
+use function App\Filament\Resources\Operation\OrderResource\RelationManagers\\trans;
 
 class FoodOrdersRelationManager extends RelationManager
 {
@@ -19,7 +19,7 @@ class FoodOrdersRelationManager extends RelationManager
 
     public static function getTitle(): string
     {
-        return trans("lang.food_plural");
+        return \trans("lang.food_plural");
     }
     public static function form(Form $form): Form
     {

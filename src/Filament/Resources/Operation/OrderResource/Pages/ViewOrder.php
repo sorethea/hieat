@@ -15,7 +15,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ViewRecord;
 use function App\Filament\Resources\Operation\OrderResource\Pages\auth;
-use function App\Filament\Resources\Operation\OrderResource\Pages\trans;
+use function App\Filament\Resources\Operation\OrderResource\Pages\\trans;
 use function PHPUnit\Framework\isNull;
 
 class ViewOrder extends ViewRecord
@@ -29,8 +29,8 @@ class ViewOrder extends ViewRecord
             //Actions\EditAction::make(),
             Actions\Action::make("activate")
                 ->label(function(){
-                    if($this->record->active) return trans("lang.inactive");
-                    else return trans("lang.active");
+                    if($this->record->active) return \trans("lang.inactive");
+                    else return \trans("lang.active");
                 })
                 ->requiresConfirmation()
                 ->action(function (array $data){

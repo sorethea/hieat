@@ -12,7 +12,7 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use function App\Filament\Resources\Operation\trans;
+
 
 class RestaurantResource extends Resource
 {
@@ -22,7 +22,7 @@ class RestaurantResource extends Resource
 
     protected static function getNavigationGroup(): ?string
     {
-        return trans("lang.operation");
+        return \trans("lang.operation");
     }
 
     public static function form(Form $form): Form
@@ -39,7 +39,7 @@ class RestaurantResource extends Resource
                                 ->relationship("cuisines","name")
                                 ->required(),
                             Forms\Components\BelongsToManyMultiSelect::make("users")
-                                ->label(trans("lang.restaurant_users"))
+                                ->label(\trans("lang.restaurant_users"))
                                 ->relationship("users","name")
                                 ->required(),
                         ])->columns(2),
@@ -68,7 +68,7 @@ class RestaurantResource extends Resource
                     ->columnSpan(['lg' => 2]),
                 Forms\Components\Group::make()
                     ->schema([
-                        Forms\Components\Section::make(trans("lang.admin_area"))
+                        Forms\Components\Section::make(\trans("lang.admin_area"))
                             ->schema([
                                 Forms\Components\TextInput::make("default_tax")->default(0),
                                 Forms\Components\TextInput::make("service_charge")->default(0),
@@ -95,7 +95,7 @@ class RestaurantResource extends Resource
                     ->rounded(),
                 Tables\Columns\TextColumn::make("name")->searchable(),
                 Tables\Columns\TextColumn::make("phone")->searchable(),
-                Tables\Columns\BooleanColumn::make("available_for_delivery")->label(trans('lang.food_deliverable')),
+                Tables\Columns\BooleanColumn::make("available_for_delivery")->label(\trans('lang.food_deliverable')),
                 Tables\Columns\BooleanColumn::make("closed"),
                 Tables\Columns\BooleanColumn::make("active"),
                 Tables\Columns\TextColumn::make("created_at")->dateTime("M d, Y H:i:s"),
