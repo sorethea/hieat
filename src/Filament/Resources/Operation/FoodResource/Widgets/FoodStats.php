@@ -7,7 +7,6 @@ use App\Models\Food;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Card;
 use Symfony\Component\Console\Input\Input;
-use function App\Filament\Resources\Operation\FoodResource\Widgets\\trans;
 
 
 class FoodStats extends BaseWidget
