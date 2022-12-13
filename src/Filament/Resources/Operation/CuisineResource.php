@@ -64,6 +64,7 @@ class CuisineResource extends Resource
     public static function getRelations(): array
     {
         return [
+            \Sorethea\Hieat\Filament\Resources\Operation\CuisineResource\RelationManagers\RestaurantsRelationManager::class,
             \Sorethea\Hieat\Filament\Resources\Operation\OrderResource\RelationManagers\ActivitiesRelationManager::class,
         ];
     }
