@@ -47,8 +47,7 @@ class UserResource extends Resource
                         ->visibleOn("create")
                         ->required(),
                     Forms\Components\SpatieMediaLibraryFileUpload::make("avatar")
-                        ->collection('avatar')
-                        ->image(),
+                        ->collection('avatar'),
                 ])->columnSpan(2),
                 Forms\Components\Card::make()->schema([
                     Forms\Components\BelongsToManyCheckboxList::make("roles")
