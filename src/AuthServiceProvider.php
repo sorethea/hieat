@@ -2,10 +2,12 @@
 
 namespace Sorethea\Hieat;
 use App\Models\Food;
+use App\Models\Restaurant;
 use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Sorethea\Hieat\Filament\Resources\Settings\RoleResource;
 use Sorethea\Hieat\Policies\Operation\FoodPolicy;
+use Sorethea\Hieat\Policies\Operation\RestaurantPolicy;
 use Sorethea\Hieat\Policies\Settings\ActivityPolicy;
 use Sorethea\Hieat\Policies\Settings\PermissionPolicy;
 use Sorethea\Hieat\Policies\Settings\RolePolicy;
@@ -22,6 +24,8 @@ class AuthServiceProvider extends ServiceProvider
         Role::class => RolePolicy::class,
         Activity::class => ActivityPolicy::class,
         Food::class => FoodPolicy::class,
+        Restaurant::class => RestaurantPolicy::class,
+
     ];
     public function register()
     {
