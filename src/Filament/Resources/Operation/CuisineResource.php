@@ -36,7 +36,6 @@ class CuisineResource extends Resource
                 ])->columnSpan(2),
                 Forms\Components\Card::make()->schema([
                     Forms\Components\Toggle::make("active")->default(true),
-                    Forms\Components\Placeholder::make("restaurants_count")->visible(fn($record)=>$record),
                 ])->columnSpan(1),
             ])->columns(3);
     }
@@ -65,7 +64,7 @@ class CuisineResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            \Sorethea\Hieat\Filament\Resources\Operation\OrderResource\RelationManagers\ActivitiesRelationManager::class,
         ];
     }
     
