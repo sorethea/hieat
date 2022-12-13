@@ -28,7 +28,14 @@ class RestaurantsRelationManager extends RelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\SpatieMediaLibraryImageColumn::make("image")
+                    ->collection("image")
+                    ->rounded(),
+                Tables\Columns\TextColumn::make("name")->searchable(),
+                Tables\Columns\TextColumn::make("phone")->searchable(),
+                Tables\Columns\BooleanColumn::make("available_for_delivery")->label(\trans('lang.food_deliverable')),
+                Tables\Columns\BooleanColumn::make("closed"),
+                Tables\Columns\BooleanColumn::make("active"),
             ])
             ->filters([
                 //
