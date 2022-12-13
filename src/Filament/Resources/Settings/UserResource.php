@@ -29,30 +29,35 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make("name")
-                    ->required(),
-                Forms\Components\TextInput::make("phone")
-                    ->required()
-                    ->unique("users","phone",ignorable: fn($record)=>$record)
-                    ->rule("digits_between:9,10")
-                    ->mask(fn(Forms\Components\TextInput\Mask $mask)=>$mask->pattern('{0}00 000-0000')),
-                Forms\Components\TextInput::make("password")
-                    ->password()
-                    ->required()
-                    ->visibleOn("create")
-                    ->same("password_confirmation"),
-                Forms\Components\TextInput::make("password_confirmation")
-                    ->password()
-                    ->visibleOn("create")
-                    ->required(),
-                Forms\Components\BelongsToManyCheckboxList::make("roles")
-                    ->relationship("roles","name")
-                    ->required(),
-                Forms\Components\SpatieMediaLibraryFileUpload::make("avatar")
-                    ->collection('avatar')
-                    ->image(),
-                Forms\Components\Toggle::make("active"),
-            ]);
+                Forms\Components\Card::make()->schema([
+                    Forms\Components\TextInput::make("name")
+                        ->required(),
+                    Forms\Components\TextInput::make("phone")
+                        ->required()
+                        ->unique("users","phone",ignorable: fn($record)=>$record)
+                        ->rule("digits_between:9,10")
+                        ->mask(fn(Forms\Components\TextInput\Mask $mask)=>$mask->pattern('{0}00 000-0000')),
+                    Forms\Components\TextInput::make("password")
+                        ->password()
+                        ->required()
+                        ->visibleOn("create")
+                        ->same("password_confirmation"),
+                    Forms\Components\TextInput::make("password_confirmation")
+                        ->password()
+                        ->visibleOn("create")
+                        ->required(),
+                    Forms\Components\SpatieMediaLibraryFileUpload::make("avatar")
+                        ->collection('avatar')
+                        ->image(),
+                ])->columnSpan(2),
+                Forms\Components\Card::make()->schema([
+                    Forms\Components\BelongsToManyCheckboxList::make("roles")
+                        ->relationship("roles","name")
+                        ->required(),
+                    Forms\Components\Toggle::make("active"),
+                ])->columnSpan(1),
+
+            ])->columns(3);
     }
 
     public static function table(Table $table): Table
