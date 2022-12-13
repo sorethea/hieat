@@ -31,13 +31,13 @@ class CuisineResource extends Resource
             ->schema([
                 Forms\Components\Card::make()->schema([
                     Forms\Components\TextInput::make("name")->unique("cuisines",ignorable: fn($record)=>$record,ignoreRecord: true)->required(),
-
+                    Forms\Components\SpatieMediaLibraryFileUpload::make("image")->collection("image"),
                     Forms\Components\MarkdownEditor::make("description"),
                 ])->columnSpan(2),
                 Forms\Components\Card::make()->schema([
                     Forms\Components\Toggle::make("active")->default(true),
-                    Forms\Components\SpatieMediaLibraryFileUpload::make("image")->collection("image"),
-                ]),
+
+                ])->columnSpan(1),
             ])->columns(3);
     }
 
