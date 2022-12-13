@@ -29,11 +29,16 @@ class CuisineResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make("name")->unique("cuisines",ignorable: fn($record)=>$record,ignoreRecord: true)->required(),
-                Forms\Components\Toggle::make("active")->default(true),
-                Forms\Components\MarkdownEditor::make("description"),
-                Forms\Components\SpatieMediaLibraryFileUpload::make("image")->collection("image"),
-            ]);
+                Forms\Components\Card::make()->schema([
+                    Forms\Components\TextInput::make("name")->unique("cuisines",ignorable: fn($record)=>$record,ignoreRecord: true)->required(),
+
+                    Forms\Components\MarkdownEditor::make("description"),
+                ])->columnSpan(2),
+                Forms\Components\Card::make()->schema([
+                    Forms\Components\Toggle::make("active")->default(true),
+                    Forms\Components\SpatieMediaLibraryFileUpload::make("image")->collection("image"),
+                ]),
+            ])->columns(3);
     }
 
     public static function table(Table $table): Table
@@ -49,7 +54,7 @@ class CuisineResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
+                //Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
