@@ -36,7 +36,7 @@ class CuisineResource extends Resource
                 ])->columnSpan(2),
                 Forms\Components\Card::make()->schema([
                     Forms\Components\Toggle::make("active")->default(true),
-
+                    Forms\Components\Placeholder::make("restaurants_count")->visible(fn($record)=>$record),
                 ])->columnSpan(1),
             ])->columns(3);
     }
@@ -74,7 +74,7 @@ class CuisineResource extends Resource
         return [
             'index' => \Sorethea\Hieat\Filament\Resources\Operation\CuisineResource\Pages\ListCuisines::route('/'),
             'create' => \Sorethea\Hieat\Filament\Resources\Operation\CuisineResource\Pages\CreateCuisine::route('/create'),
-            'view' => \Sorethea\Hieat\Filament\Resources\Operation\CuisineResource\Pages\ViewCuisine::route('/{record}'),
+            //'view' => \Sorethea\Hieat\Filament\Resources\Operation\CuisineResource\Pages\ViewCuisine::route('/{record}'),
             'edit' => \Sorethea\Hieat\Filament\Resources\Operation\CuisineResource\Pages\EditCuisine::route('/{record}/edit'),
         ];
     }    
