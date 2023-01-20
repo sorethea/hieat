@@ -16,14 +16,14 @@ use Spatie\LaravelPackageTools\Package;
 class ResourceServiceProvider extends PluginServiceProvider
 {
     protected array $resources = [
-        ActivityResource::class,
+        ///ActivityResource::class,
         UserResource::class,
         RoleResource::class,
         PermissionResource::class,
-        OrderResource::class,
-        RestaurantResource::class,
-        FoodResource::class,
-        CuisineResource::class,
+        ///OrderResource::class,
+        ///RestaurantResource::class,
+        ///FoodResource::class,
+        ///CuisineResource::class,
     ];
 
     public function configurePackage(Package $package): void
